@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Form Result</title>
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<h2>Your Submitted Info</h2>
+
+<p><strong>Name:</strong> <span id="name"></span></p>
+<p><strong>Email:</strong> <span id="email"></span></p>
+<p><strong>Subject:</strong> <span id="subject"></span></p>
+<p><strong>Message:</strong> <span id="message"></span></p>
+
+<script>
+const params = new URLSearchParams(window.location.search);
+
+document.getElementById("name").textContent = params.get("name");
+document.getElementById("email").textContent = params.get("_replyto");
+document.getElementById("subject").textContent = params.get("subject");
+document.getElementById("message").textContent = params.get("message");
+</script>
+<script>
+document.getElementById("name").textContent = localStorage.getItem("name");
+document.getElementById("email").textContent = localStorage.getItem("email");
+document.getElementById("subject").textContent = localStorage.getItem("subject");
+document.getElementById("message").textContent = localStorage.getItem("message");
+</script>
+</body>
+</html>
